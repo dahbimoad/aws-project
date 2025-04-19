@@ -2,9 +2,13 @@ const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 const moment = require('moment-timezone');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Swagger configuration
 const swaggerOptions = {
@@ -15,6 +19,12 @@ const swaggerOptions = {
       version: '1.0.0',
       description: 'An API that returns the current time for a selected region',
     },
+    servers: [
+      {
+        url: '/',
+        description: 'Current server'
+      }
+    ]
   },
   apis: ['./app.js'],
 };
@@ -162,6 +172,11 @@ app.get('/api/regions', (req, res) => {
     // Uncomment below to return all regions (there are many)
     // allRegions: regions
   });
+});
+
+// Add a root route handler to redirect to the documentation
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(port, () => {

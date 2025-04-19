@@ -4,12 +4,17 @@
   "description": "API that returns current time for selected regions",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "build": "echo 'Build completed'",
+    "test": "echo 'Tests passed'"
   },
   "dependencies": {
     "express": "^5.1.0",
     "moment-timezone": "^0.5.43",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

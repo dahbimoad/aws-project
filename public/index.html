@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regional Time API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .api-info {
+            background: #f9f9f9;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+        .endpoints {
+            margin: 20px 0;
+        }
+        .endpoint {
+            background: #f1f1f1;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 4px solid #3498db;
+        }
+        code {
+            background: #f1f1f1;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px 0;
+            color: #777;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Regional Time API</h1>
+            <p>Get current time for any timezone around the world</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="api-info">
+            <h2>Welcome to Regional Time API</h2>
+            <p>This API provides current time information for various regions and timezones around the world. Use it to get accurate local time for any supported region.</p>
+            <a href="/api-docs" class="btn">Interactive API Documentation</a>
+        </div>
+
+        <div class="endpoints">
+            <h2>API Endpoints</h2>
+            
+            <div class="endpoint">
+                <h3>Get Current Time for a Region</h3>
+                <p><code>GET /api/time/{region}</code></p>
+                <p>Returns the current time for a specific timezone region.</p>
+                <p>Example: <a href="/api/time/Africa/Casablanca" target="_blank">/api/time/Africa/Casablanca</a></p>
+            </div>
+            
+            <div class="endpoint">
+                <h3>List Available Regions</h3>
+                <p><code>GET /api/regions</code></p>
+                <p>Returns a list of all available timezone regions that can be used with the API.</p>
+                <p>Example: <a href="/api/regions" target="_blank">/api/regions</a></p>
+            </div>
+        </div>
+
+        <div class="api-info">
+            <h2>Example Usage</h2>
+            <p>To get current time in New York:</p>
+            <code>GET /api/time/America/New_York</code>
+            <p>To get current time in London:</p>
+            <code>GET /api/time/Europe/London</code>
+            <p>To get current time in Tokyo:</p>
+            <code>GET /api/time/Asia/Tokyo</code>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Regional Time API - AWS App Runner Deployment | <a href="/api-docs">API Documentation</a></p>
+        </div>
+    </footer>
+</body>
+</html>
